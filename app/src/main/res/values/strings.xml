@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PrjWeightRecords</string>
+    <string name="homepage_title">Records</string>
+    <string name="lesson_title">Lesson</string>
+    <string name="contact_title">Contacts</string>
+    <string name="moment_title">Moments</string>
+</resources>

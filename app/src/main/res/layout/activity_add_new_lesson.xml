@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add_New_Lesson"
+    android:orientation="vertical"
+    >
+
+    <TableRow
+        android:id="@+id/trHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/heater_style">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="Add New Lesson"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:paddingLeft="80dp" />
+
+        <ImageButton
+            android:id="@+id/ibClose"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/close"
+            android:scaleType="fitCenter"
+            android:backgroundTint="#00FFFFFF"
+            android:padding="20dp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trBody"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvLessonTitle"
+                style="@style/Common_Text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Lesson Title : "
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginLeft="30dp"
+                app:layout_goneMarginTop="30dp" />
+
+<!--            Clients add lesson title in edLessontitle -->
+
+            <EditText
+                android:id="@+id/edLessonTitle"
+                style="@style/EditText_style"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_style"
+                android:ems="17"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text=""
+                app:layout_constraintLeft_toLeftOf="@+id/tvLessonTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvLessonTitle" />
+
+            <TextView
+                android:id="@+id/tvLessonContent"
+                style="@style/Common_Text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Content : "
+                app:layout_constraintLeft_toLeftOf="@id/edLessonTitle"
+                app:layout_constraintTop_toBottomOf="@+id/edLessonTitle" />
+
+<!--            Clients add content text at here. Hint: this edittext is multi line text box
+                which clients can type as many as they want in the content box. -->
+            <EditText
+                android:id="@+id/edLessonContent"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_style"
+                android:ems="17"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:text=""
+                app:layout_constraintLeft_toLeftOf="@+id/tvLessonContent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLessonContent" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="#112233"
+                android:text="Submit"
+                app:layout_constraintRight_toRightOf="@+id/edLessonContent"
+                app:layout_constraintTop_toBottomOf="@+id/edLessonContent"
+                app:layout_goneMarginBottom="20dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </TableRow>
+
+</LinearLayout>

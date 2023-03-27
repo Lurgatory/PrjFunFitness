@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<!--   Our main activity page contains two parts: trBody and tr Footer.
+        For the trBody, it will display the related module when the client click the button at the footer.
+        For the trFooter, it contains four buttons such as ibRecord, ibLesson, ibMoment, ibContact.
+        For ibRecord, it gonna shows different records such as weight, meal, and workout.
+        For ibLesson, it gonna display different lessons which are created by different users (any users).
+                        The lesson is like personal experience sharing or knowledge sharing.
+                        (Now, in this version, users can only write texts, but in next version, users can upload videos and photos)
+        For ibMoment, it gonna display different text and information from users who is on your contact list.
+                        The moment is like personal mood sharing, personal idea sharing, personal story sharing and etc.
+                        (It is the community which you share your life with your friends which is the person who is on your contact list)
+        For ibContact, it gonna display all friends who you add on your contact list. Thus, user can add, delete users.
+        -->
+
+    <TableRow
+        android:id="@+id/trBody"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11" />
+
+    <TableRow
+        android:id="@+id/trFooter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+           >
+
+            <ImageButton
+                android:id="@+id/ibRecords"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/weight_loss"
+                style="@style/FooterImageViewStyle"
+                android:background="@drawable/footer_button"
+
+                />
+
+            <ImageButton
+                android:id="@+id/ibLesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/online_education"
+                style="@style/FooterImageViewStyle"
+                android:background="@drawable/footer_button"
+                />
+
+            <ImageButton
+                android:id="@+id/ibMoment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/story"
+                style="@style/FooterImageViewStyle"
+                android:background="@drawable/footer_button"
+                />
+
+            <ImageButton
+                android:id="@+id/ibContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/contact"
+                style="@style/FooterImageViewStyle"
+                android:background="@drawable/footer_button"
+                />
+        </LinearLayout>
+    </TableRow>
+</LinearLayout>

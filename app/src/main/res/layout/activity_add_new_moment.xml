@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add_New_Moment"
+    android:orientation="vertical">
+
+    <TableRow
+        android:id="@+id/trHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/heater_style">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="Add New Moment"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:paddingLeft="80dp" />
+
+        <ImageButton
+            android:id="@+id/ibClose"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/close"
+            android:scaleType="fitCenter"
+            android:backgroundTint="#00FFFFFF"
+            android:padding="20dp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trBody"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvMomentTitle"
+                style="@style/Common_Text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Post Text : "
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="30dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edMomentContent"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_style"
+                android:ems="17"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:text=""
+                app:layout_constraintLeft_toLeftOf="@+id/tvMomentTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvMomentTitle"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="30dp"/>
+
+            <Button
+                android:id="@+id/btnMomentSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#112233"
+                android:text="Submit"
+                app:layout_constraintRight_toRightOf="@+id/edMomentContent"
+                app:layout_constraintTop_toBottomOf="@+id/edMomentContent"
+                android:layout_marginTop="30dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </TableRow>
+
+</LinearLayout>

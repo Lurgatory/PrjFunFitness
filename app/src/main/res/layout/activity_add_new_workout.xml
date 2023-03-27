@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add_New_Workout"
+    android:orientation="vertical">
+
+    <TableRow
+        android:id="@+id/trHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/heater_style"
+        >
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="Body Records"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:paddingLeft="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/ibClose"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/close"
+            android:scaleType="fitCenter"
+            android:backgroundTint="#00FFFFFF"
+            android:padding="20dp"
+            />
+    </TableRow>
+
+<!--    Client enters workoutname, repetition, and stes in the page. -->
+    <TableRow
+        android:id="@+id/trBody"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvWorkoutName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Workout Name :"
+                style="@style/Common_Text_style"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edWorkoutName"
+                android:layout_width="wrap_content"
+                style="@style/EditText_style"
+                android:background="@drawable/edittext_style"
+                android:ems="17"
+                android:inputType="textPersonName"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@id/tvWorkoutName"
+                app:layout_constraintLeft_toLeftOf="@id/tvWorkoutName"
+                />
+
+            <TextView
+                android:id="@+id/tvRep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repetition : "
+                style="@style/Common_Text_style"
+                app:layout_constraintTop_toBottomOf="@+id/edWorkoutName"
+                app:layout_constraintLeft_toLeftOf="@+id/edWorkoutName" />
+
+            <EditText
+                android:id="@+id/edRep"
+                android:layout_width="wrap_content"
+                style="@style/EditText_style"
+                android:background="@drawable/edittext_style"
+                android:ems="17"
+                android:inputType="textPersonName"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/tvRep"
+                app:layout_constraintLeft_toLeftOf="@id/tvRep"/>
+
+            <TextView
+                android:id="@+id/tvSets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sets : "
+                style="@style/Common_Text_style"
+                app:layout_constraintTop_toBottomOf="@+id/edRep"
+                app:layout_constraintLeft_toLeftOf="@+id/edRep" />
+
+            <EditText
+                android:id="@+id/edSets"
+                android:layout_width="wrap_content"
+                style="@style/EditText_style"
+                android:background="@drawable/edittext_style"
+                android:ems="17"
+                android:inputType="textPersonName"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/tvSets"
+                app:layout_constraintLeft_toLeftOf="@id/tvSets"
+                />
+
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                app:layout_constraintTop_toBottomOf="@+id/edSets"
+                app:layout_constraintRight_toRightOf="@id/edSets"
+                android:backgroundTint="#112233"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </TableRow>
+
+</LinearLayout>
