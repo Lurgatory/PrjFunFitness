@@ -1,11 +1,14 @@
 package com.example.prjweightrecords;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -16,7 +19,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton ibNewRecordPlus,ibNewLessonPlus, ibNewMomentPlus, ibNewContactPlus,
             ibRecords, ibLesson, ibMoment, ibContact;
 
+    private EditText edNewContact_Firstname, edNewContact_Lastname, edNewContactPhoneNumber;
+    private Button btnNewContactAdd, btnNewContactCancel;
 
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initialize() {
+
         ibRecords = findViewById(R.id.ibRecords);
         ibLesson = findViewById(R.id.ibLesson);
         ibMoment = findViewById(R.id.ibMoment);
@@ -47,6 +55,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ibContact.setOnClickListener(this);
         ibNewRecordPlus.setOnClickListener(this);
 
+    }
+
+    // Add new contact popup window
+    public void createNewContactDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View contactPopupView = getLayoutInflater().inflate(R.layout.popup_login,null);
+        edNewContact_Firstname = (EditText) contactPopupView.findViewById(R.id.edNewContactFirstName);
+        edNewContact_Lastname = (EditText) contactPopupView.findViewById(R.id.edNewContactLastName);
+        edNewContactPhoneNumber = (EditText) contactPopupView.findViewById(R.id.edNewContactPhoneNumber);
+        btnNewContactAdd = (Button) contactPopupView.findViewById(R.id.btnAddNewContact);
+        btnNewContactCancel = (Button) contactPopupView.findViewById(R.id.btnNewContactCancel);
+
+        dialogBuilder.setView(contactPopupView);
+        dialog = dialogBuilder.create();
+        dialog.show();
+
+        btnNewContactAdd.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btnNewContactCancel.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
 
@@ -71,6 +110,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ibNewMomentPlus:
                 i = new Intent(this,Add_New_Moment.class);
                 startActivity(i);
+                break;
+            case R.id.ibNewContactPlus:
+                createNewContactDialog();
                 break;
             case R.id.ibRecords:
                 tableRow.removeAllViews();
@@ -97,6 +139,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tableRow.removeAllViews();
                 v = l.inflate(R.layout.activity_contact_page,null);
                 tableRow.addView(v);
+                ibNewContactPlus = v.findViewById(R.id.ibNewContactPlus);
+                ibNewContactPlus.setOnClickListener(this);
                 break;
 
 

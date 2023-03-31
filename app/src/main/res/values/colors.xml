@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="theme_color_gray">#8C61777F</color>
     <color name="unselectedFooterButton">#8C61777F</color>
     <color name="selectedFooterButton">#12313E</color>
 </resources>

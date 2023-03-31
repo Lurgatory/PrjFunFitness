@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "777388696580",
+    "project_id": "prjfunfitness",
+    "storage_bucket": "prjfunfitness.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777388696580:android:5bb2606aa1f88e1a73c151",
+        "android_client_info": {
+          "package_name": "com.example.prjweightrecords"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777388696580-b8jhhh0eelu2nb2aasbfinqjh9ftan51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARHHlJYgsCe3IAYCxdoOW2skGWhqBWEHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777388696580-b8jhhh0eelu2nb2aasbfinqjh9ftan51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
