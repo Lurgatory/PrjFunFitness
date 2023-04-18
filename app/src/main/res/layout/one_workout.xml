@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvOneWorkoutDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tvOneWorkoutWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight :"
+        app:layout_constraintLeft_toRightOf="@+id/tvOneWorkoutDate"
+        app:layout_constraintTop_toTopOf="@+id/tvOneWorkoutDate"
+        android:layout_marginLeft="100dp"/>
+
+    <TextView
+        android:id="@+id/tvOneWorkoutWeightDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0kg"
+        app:layout_constraintLeft_toRightOf="@+id/tvOneWorkoutWeight"
+        app:layout_constraintTop_toTopOf="@+id/tvOneWorkoutWeight"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/tvOneWorkoutBreakfast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Breakfast :"
+        app:layout_constraintTop_toBottomOf="@+id/tvOneWorkoutDate"
+        app:layout_constraintLeft_toLeftOf="@+id/tvOneWorkoutDate"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvOneWorkoutBreakfastDatabase"
+        android:text="Breakfast input"
+        app:layout_constraintTop_toBottomOf="@id/tvOneWorkoutBreakfast"
+        app:layout_constraintLeft_toLeftOf="@+id/tvOneWorkoutBreakfast"
+
+        />
+
+    <TextView
+        android:id="@+id/tvOneWorkoutLunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lunch :"
+        app:layout_constraintTop_toBottomOf="@+id/tvOneWorkoutBreakfastDatabase"
+        app:layout_constraintLeft_toLeftOf="@+id/tvOneWorkoutBreakfastDatabase"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvOneWorkoutLunchDatabase"
+        android:text="Lunch input"
+        app:layout_constraintTop_toBottomOf="@id/tvOneWorkoutLunch"
+        app:layout_constraintLeft_toLeftOf="@+id/tvOneWorkoutLunch"
+
+        />
+
+    <TextView
+        android:id="@+id/tvOneWorkoutDinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dinner :"
+        app:layout_constraintTop_toBottomOf="@+id/tvOneWorkoutLunchDatabase"
+        app:layout_constraintLeft_toLeftOf="@+id/tvOneWorkoutLunchDatabase"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvOneWorkoutDinnerDatabase"
+        android:text="Dinner input"
+        app:layout_constraintTop_toBottomOf="@id/tvOneWorkoutDinner"
+        app:layout_constraintLeft_toLeftOf="@+id/tvOneWorkoutDinner"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

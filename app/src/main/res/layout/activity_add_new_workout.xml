@@ -123,6 +123,16 @@
                 app:layout_constraintRight_toRightOf="@id/edSets"
                 android:backgroundTint="#112233"/>
 
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                app:layout_constraintTop_toBottomOf="@+id/edSets"
+                app:layout_constraintRight_toLeftOf="@id/btnAdd"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="#112233" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </TableRow>
 

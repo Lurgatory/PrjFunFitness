@@ -3,7 +3,7 @@ package com.example.prjweightrecords;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+//seems to be default code
 public class Contact_Page extends AppCompatActivity {
 
     @Override

@@ -181,6 +181,7 @@
 
 <!--                The following listview displays workout plans that users add-->
                 <ListView
+                    android:id="@+id/lvWorkoutExercises"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 

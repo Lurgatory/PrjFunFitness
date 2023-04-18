@@ -2,14 +2,14 @@ package com.example.prjweightrecords;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+//import intent and UI 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+//import the databse
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
 import java.util.Objects;
-
+//declare the onclick
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     // Add btnlogin and tvSignup variables
@@ -31,11 +31,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+		//declare
         initialize();
     }
 
     // make login and signup button
     private void initialize() {
+		//get the UI id
         loginUsername = findViewById(R.id.login_username);
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
@@ -44,7 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tvSignupRedirect.setOnClickListener(this);
 
     }
-
+//custom method
     public Boolean validateUsername(){
         String loginUsernameText = loginUsername.getText().toString();
         if (loginUsernameText.isEmpty()){
@@ -55,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return true;
         }
     }
-
+//custom method
     public Boolean validatePassword(){
         String loginPasswordText = loginPassword.getText().toString();
         if (loginPasswordText.isEmpty()){
@@ -66,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return true;
         }
     }
-
+//custom method
     public void checkUser(){
         String userUsername = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
@@ -83,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     if (passwordFromDB.equals(userPassword)){
                         loginUsername.setError(null);
                         Intent i = new Intent( LoginActivity.this, MainActivity.class);
+                        i.putExtra("username",userUsername);
                         startActivity(i);
                     }else{
                         loginPassword.setError("Invalid Credentials");

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvWorkoutNameCellTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Workout Name:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tvWorkoutNameCellDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="WorkoutNameDatabase"
+        app:layout_constraintTop_toBottomOf="@+id/tvWorkoutNameCellTitle"
+        app:layout_constraintLeft_toLeftOf="@+id/tvWorkoutNameCellTitle"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tvRepetitionCellTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Repetition :"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/tvWorkoutNameCellTitle"
+        app:layout_constraintLeft_toRightOf="@+id/tvWorkoutNameCellTitle"
+        android:layout_marginLeft="80dp"
+        />
+
+    <TextView
+        android:id="@+id/tvRepetitionCellDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="RepetitionDatabase"
+        app:layout_constraintTop_toBottomOf="@+id/tvRepetitionCellTitle"
+        app:layout_constraintLeft_toLeftOf="@+id/tvRepetitionCellTitle"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tvSetCellTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Sets :"
+        app:layout_constraintTop_toTopOf="@+id/tvRepetitionCellTitle"
+        app:layout_constraintLeft_toRightOf="@+id/tvRepetitionCellTitle"
+        android:layout_marginLeft="70dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tvSetCellDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="SetsDatabase"
+        app:layout_constraintTop_toTopOf="@+id/tvRepetitionCellDatabase"
+        app:layout_constraintStart_toStartOf="@+id/tvSetCellTitle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

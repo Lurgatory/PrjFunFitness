@@ -1,21 +1,29 @@
-package com.example.prjweightrecords.model;
+package model;
 
 import androidx.annotation.NonNull;
 
 public class User {
-
+	//robertoComment--fields
     String name, email, username, password;
 
+//    Record record;
+  //robertoComment--default construtor
     public User() {
     }
 
+//    public User(Record record) {
+//        this.record = record;
+//    }
+
+
+//robertoComment--constrictoer w/ 4 params
     public User(String name, String email, String username, String password) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
     }
-
+//robertoComment--geters/setters
     public String getName() {
         return name;
     }
@@ -49,6 +57,14 @@ public class User {
         this.password = password;
     }
 
+//    public Record getRecord() {
+//        return record;
+//    }
+//
+//    public void setRecord(Record record) {
+//        this.record = record;
+//    }
+//robertoComment--tostring
     @NonNull
     @Override
     public String toString() {

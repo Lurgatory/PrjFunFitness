@@ -3,7 +3,7 @@ package com.example.prjweightrecords;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+//basic default code
 public class Lesson_Page extends AppCompatActivity {
 
     @Override

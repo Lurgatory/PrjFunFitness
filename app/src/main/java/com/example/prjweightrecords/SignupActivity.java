@@ -10,12 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.prjweightrecords.model.User;
+import model.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+//declare the onclick
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
-
+    //fields
     EditText signupName, signupEmail, signupUsername, signupPassword;
     TextView loginRedirectText;
     Button signupButton;
@@ -26,11 +26,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
+        //declare
         initialize();
     }
-
+   //create
     private void initialize() {
+		//find the UI id
         signupName = findViewById(R.id.signup_name);
         signupEmail = findViewById(R.id.signup_email);
         signupUsername = findViewById(R.id.signup_username);
@@ -40,7 +41,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         signupButton.setOnClickListener(this);
     }
-
+   //create the onclick--its a standard db connect then get the input id then refrnce child then toast and go to new page
     @Override
     public void onClick(View view) {
         int id = view.getId();
