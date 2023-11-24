@@ -35,9 +35,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         initialize();
     }
 
+    //18/04/2023 -- create the initialize() here
     // make login and signup button
     private void initialize() {
 		//get the UI id
+        //18/04/2023 -- set the listener for login button and signup redirects
         loginUsername = findViewById(R.id.login_username);
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
@@ -46,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tvSignupRedirect.setOnClickListener(this);
 
     }
-//custom method
+//custom method //18/04/2023  -- validate if empty user input
     public Boolean validateUsername(){
         String loginUsernameText = loginUsername.getText().toString();
         if (loginUsernameText.isEmpty()){
@@ -57,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return true;
         }
     }
-//custom method
+//custom method //18/04/2023 -- validate if empty user input
     public Boolean validatePassword(){
         String loginPasswordText = loginPassword.getText().toString();
         if (loginPasswordText.isEmpty()){
@@ -68,17 +70,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return true;
         }
     }
-//custom method
+//custom method //18/04/2023 -- validate check user input --
     public void checkUser(){
+        //18/04/2023 -- trim the user entry --
         String userUsername = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
 
+        //18/04/2023  -- connect to the DB and to the collection needs -- users
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        //18/04/2023  -- user the buil in class query to make object for child referral
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
 
+        //18/04/2023 -- invoke listener for 1 event
+        //18/04/2023 -- this also checks if user exists in the DB and if entry is valid
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //18/04/2023  -- this is a error block of code and redirect to anther activity --
                 if (snapshot.exists()){
                     loginUsername.setError(null);
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
@@ -104,9 +112,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    //18/04/2023 -- create the onclick ()
     // jump to next page without validation
     @Override
     public void onClick(View view) {
+        //18/04/2023 -- this switch block that logs in the user or goes to signup page
+        //18/04/2023 -- it checks if empty with methods from above
         Intent i;
         int id = view.getId();
         switch (id){

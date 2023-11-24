@@ -19,12 +19,14 @@ import model.Lesson;
 
 public class Add_New_Lesson extends AppCompatActivity implements View.OnClickListener {
 
+    //18/04/2023 - make UI vars fields
     private ImageButton ibClose;
     private EditText edLessonTitle, edLessonContent;
     private Button btnLessonSubmit,btnLessonDelete;
 
     private String lessonTitle, lessonContent, intentUsername,action,author;
 
+    //18/04/2023 - declare the DB
     FirebaseDatabase firebase;
     DatabaseReference lessonReference;
 
@@ -42,12 +44,15 @@ public class Add_New_Lesson extends AppCompatActivity implements View.OnClickLis
         initialize();
     }
 
+    //18/04/2023 -  create this method
     private void initialize() {
+        //18/04/2023 -- get the UI id
         ibClose = findViewById(R.id.ibClose);
         edLessonTitle = findViewById(R.id.edLessonTitle);
         edLessonContent = findViewById(R.id.edLessonContent);
         btnLessonSubmit = findViewById(R.id.btnLessonSubmit);
         btnLessonDelete = findViewById(R.id.btnLessonDelete);
+
 
         action = getIntent().getStringExtra("action");
         lessonTitle = getIntent().getStringExtra("title");
@@ -70,14 +75,17 @@ public class Add_New_Lesson extends AppCompatActivity implements View.OnClickLis
             btnLessonSubmit.setText("Modify");
         }
 
+        //18/04/2023 -- set the listners
         btnLessonSubmit.setOnClickListener(this);
         btnLessonDelete.setOnClickListener(this);
         ibClose.setOnClickListener(this);
 
+        //18/04/2023 -- connect to the DB
         firebase = FirebaseDatabase.getInstance();
         lessonReference = firebase.getReference("users");
     }
 
+    //18/04/2023 -- create the onclick ()
     @Override
     public void onClick(View view) {
         int id = view.getId();
@@ -95,22 +103,26 @@ public class Add_New_Lesson extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    //18/04/2023 -- method to submit lesson --
     private void deleteLesson() {
         lessonTitle = edLessonTitle.getText().toString();
 
         lessonReference.child(intentUsername).child("lesson").child(lessonTitle).removeValue();
     }
 
+    //18/04/2023 -- method to submit lesson --
     private void submitLesson(View view) {
+        //18/04/2023 -- get the user input
         lessonTitle = edLessonTitle.getText().toString();
         lessonContent = edLessonContent.getText().toString();
 
-//        intentUsername = getIntent().getStringExtra("username");
-
+        //18/04/2023 -- create object from class
         Lesson lesson = new Lesson(lessonTitle,lessonContent, intentUsername,date);
 
+        //18/04/2023 -- refer to child docs in the db
         lessonReference.child(intentUsername).child("lesson").child(lessonTitle).setValue(lesson);
 
+        //18/04/2023 alert output
         Toast.makeText(this,"Lesson Add Successfully", Toast.LENGTH_LONG).show();
 
         this.finish();
